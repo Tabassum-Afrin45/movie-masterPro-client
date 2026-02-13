@@ -87,7 +87,7 @@ plotSummary}
               name="description"
               required
               rows="3"
-              className="textarea w-full rounded-2xl focus:border-0 focus:outline-gray-200 h-[250px]"
+              className="textarea w-full rounded-2xl focus:border-0 focus:outline-gray-200 h-62.5"
               placeholder="Enter description"
             ></textarea>
           </div>

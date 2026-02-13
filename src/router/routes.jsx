@@ -20,7 +20,6 @@ export const router = createBrowserRouter([
       {
         path: "/",
         element: <Home />,
-        loader: () => fetch('http://localhost:3000/latest-movies')
       },
       {
         path: "/all-movies",
@@ -68,8 +67,7 @@ export const router = createBrowserRouter([
             <UpdateMovie />
           </PrivateRoute>
         ),
-          loader: ({params}) => fetch(`http://localhost:3000/movies/${params.id}`)
-      },
+   },
       {
         path: "/auth/login",
         element: <Login />,

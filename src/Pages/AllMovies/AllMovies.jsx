@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { MovieCard } from "../../components/MovieCard";
 
 
-const AllMovies = () => {
+const AllMovies=()=> {
   const [movies, setMovies] = useState([]);
 
   useEffect(() => {
