@@ -3,10 +3,11 @@ import { IoLogoModelS } from "react-icons/io";
 import { GoHomeFill } from "react-icons/go";
 import { IoLogIn, IoLogOut } from "react-icons/io5";
 import { FaGear, FaUser } from "react-icons/fa6";
-import { LuRotate3D } from "react-icons/lu";
-import { ImBoxAdd } from "react-icons/im";
 import { use, useEffect, useState } from "react";
 import { AuthContext } from "../context/AuthContext";
+import { RiMovie2AiLine, RiMovieLine } from "react-icons/ri";
+import { MdAddToPhotos } from "react-icons/md";
+import { LuSaveAll } from "react-icons/lu";
 
 const NavBar = () => {
   const { user, signOutUser } = use(AuthContext);
@@ -24,13 +25,13 @@ const NavBar = () => {
     setTheme(checked ? "dark": "light")
   }
   return (
-    <div className="navbar py-0 min-h-0 z-1 shadow-sm rounded-full glass-card max-w-7xl">
+    <div className="navbar py-0 min-h-0 z-1 shadow-sm rounded-xl bg-linear-to-l from-[#134E5E] to-[#19664f] max-w-7xl">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost md:hidden">
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="h-5 w-5"
+              className="h-5 w-5 text-white"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
@@ -56,17 +57,17 @@ const NavBar = () => {
             </li>
             <li>
               <NavLink to={"/all-movies"}>
-                <IoLogoModelS /> All Movies
+                <RiMovieLine /> All Movies
               </NavLink>
             </li>
           </ul>
         </div>
-        <Link to={"/"} className="flex items-center gap-1 text-xl font-bold">
-          <LuRotate3D /> Movie Master Pro
+        <Link to={"/"} className="flex items-center gap-1 text-base md:text-2xl font-bold text-white ml-4">
+          <RiMovie2AiLine /> Movie Master Pro
         </Link>
       </div>
-      <div className="navbar-center hidden md:flex">
-        <ul className="menu menu-horizontal px-1 gap-10">
+      <div className="navbar-center hidden md:flex text-white ">
+        <ul className="menu menu-horizontal px-4 gap-10 text-[15px]">
           <li>
             <NavLink to={"/"}>
               <GoHomeFill />
@@ -75,14 +76,20 @@ const NavBar = () => {
           </li>
           <li>
             <NavLink to={"/all-movies"}>
-              <IoLogoModelS /> All Movies
+              <RiMovieLine /> 
+               All Movies
             </NavLink>
           </li>
           <li>
             <NavLink to={"/add-movie"}>
-             <ImBoxAdd /> Add Movie
+             <MdAddToPhotos />Add Movie
             </NavLink>
           </li>
+          <li>
+                <NavLink to={"/my-collections"}>
+                 <LuSaveAll /> My Collections
+                </NavLink>
+              </li>
 {/* 
           <li>
             <NavLink to={"/profile"}>
@@ -120,12 +127,6 @@ const NavBar = () => {
                   <FaUser /> Profile
                 </Link>
               </li>
-
-              <li>
-                <Link to={"/my-movies"}>
-                  My Models
-                </Link>
-              </li>
               
               <input
            onChange={(e)=> handleTheme(e.target.checked)}
@@ -142,7 +143,7 @@ const NavBar = () => {
               <li>
                 <button
                   onClick={signOutUser}
-                  className="btn btn-xs text-left bg-linear-to-r from-pink-500 to-red-500 text-white"
+                  className=""
                 >
                   <IoLogOut /> Logout
                 </button>
@@ -152,10 +153,9 @@ const NavBar = () => {
         ) : (
           <Link
             to={"/auth/login"}
-            className="btn rounded-full border-gray-300  btn-sm bg-linear-to-r from-pink-500 to-red-500 text-white"
+            className="btn-grad rounded-full border-gray-300 font-medium text-md"
           >
-            {" "}
-            <IoLogIn /> Login
+            Login
           </Link>
         )}
       </div>

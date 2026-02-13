@@ -12,10 +12,15 @@ const AddMovie = () => {
     const formData = {
       title: e.target.title.value,
       genre: e.target.genre.value,
+      releaseYear:e.target.releaseYear.value,
+      director: e.target.director.value,
+      cast: e.target.cast.value,
+      rating: e.target.rating.value,
+      duration: e.target.duration.value,
       plotSummary: e.target.plotSummary.value,
       posterUrl: e.target.posterUrl.value,
-      releaseYear:e.target.releaseYear.value,
-      rating: e.target.rating.value,
+      language: e.target.language.value,
+      country: e.target.country.value,
       addedBy: user.email
     }
 
@@ -28,7 +33,7 @@ const AddMovie = () => {
     })
     .then(res => res.json())
     .then(data=> {
-      toast.success("Successfully Added!")
+      toast.success("Movie Successfully Added!")
       console.log(data)
     })
     .catch(err => {
@@ -40,76 +45,165 @@ const AddMovie = () => {
 
 
   return (
-    <div className="card border border-gray-200 bg-base-100 w-full max-w-md mx-auto shadow-2xl rounded-2xl">
+    <div className="card border border-gray-200 bg-base-100 w-full max-w-md mx-auto my-12 shadow-2xl rounded-2xl">
       <div className="card-body p-6 relative">
-        <h2 className="text-2xl font-bold text-center mb-6">Add New Model</h2>
+        <h2 className="text-3xl font-bold text-center my-auto py-2 text-green-800">Add New Movie</h2>
         <form onSubmit={handleSubmit} className="space-y-4">
-          {/* Name Field */}
+          {/* Title Field */}
           <div>
-            <label className="label font-medium">Name</label>
+            <label className="label font-medium">Title</label>
             <input
               type="text"
-              name="name"
+              name="title"
               required
               className="input w-full rounded-full focus:border-0 focus:outline-gray-200"
-              placeholder="Enter name"
+              placeholder="Enter the Title"
             />
           </div>
 
-          {/* Category Dropdown */}
+          {/* Genre Dropdown */}
           <div>
-            <label className="label font-medium">Category</label>
+            <label className="label font-medium">Genre</label>
             <select
               defaultValue={""}
-              name="category"
+              name="genre"
               required
               className="select w-full rounded-full focus:border-0 focus:outline-gray-200"
             >
               <option value="" disabled>
-                Select category
+                Select The Genre
               </option>
-              <option value="Vehicles">Vehicles</option>
-              <option value="Plants">Plants</option>
-              <option value="Foods">Foods</option>
-              <option value="Home & Living">Home & Living</option>
-              <option value="Characters">Characters</option>
-              <option value="Space">Space</option>
-              <option value="Animals">Animals</option>
+              <option value="Drama">Drama</option>
+              <option value="Comedy">Comedy</option>
+              <option value="Sci-Fi">Sci-Fi</option>
+              <option value="Thriller">Thriller</option>
+              <option value="Romantic">Romantic</option>
+              <option value="Animation">Animation</option>
+              <option value="Action">Action</option>
               <option value="Other">Other</option>
             </select>
           </div>
-
-          {/* Description Textarea */}
+                {/* Release Year Field */}
           <div>
-            <label className="label font-medium">Description</label>
+            <label className="label font-medium">Release Year</label>
+            <input
+              type="text"
+              name="releaseYear"
+              required
+              className="input w-full rounded-full focus:border-0 focus:outline-gray-200"
+              placeholder="Enter the Release Year"
+            />
+          </div>
+                {/* Director Field */}
+          <div>
+            <label className="label font-medium">Director</label>
+            <input
+              type="text"
+              name="director"
+              required
+              className="input w-full rounded-full focus:border-0 focus:outline-gray-200"
+              placeholder="Enter the Director Name"
+            />
+          </div>
+                {/* Cast Field */}
+          <div>
+            <label className="label font-medium">Cast</label>
+            <input
+              type="text"
+              name="cast"
+              required
+              className="input w-full rounded-full focus:border-0 focus:outline-gray-200"
+              placeholder="Enter the Cast Name"
+            />
+          </div>
+                {/* Release Year Field */}
+          <div>
+            <label className="label font-medium">Rating</label>
+            <input
+              type="text"
+              name="rating"
+              required
+              className="input w-full rounded-full focus:border-0 focus:outline-gray-200"
+              placeholder="Enter Ratings"
+            />
+          </div>
+                {/* Duration Field */}
+          <div>
+            <label className="label font-medium">Duration</label>
+            <input
+              type="text"
+              name="duration"
+              required
+              className="input w-full rounded-full focus:border-0 focus:outline-gray-200"
+              placeholder="Enter Duration"
+            />
+          </div>
+          {/* Plot Summary Textarea */}
+          <div>
+            <label className="label font-medium">Plot Summary</label>
             <textarea
-              name="description"
+              name="plotSummary"
               required
               rows="3"
-             className="textarea w-full rounded-2xl focus:border-0 focus:outline-gray-200 h-[250px]"
+             className="textarea w-full rounded-2xl focus:border-0 focus:outline-gray-200 h-62.5"
               placeholder="Enter description"
             ></textarea>
           </div>
 
-          {/* Thumbnail URL */}
+          {/* Poster URL */}
           <div>
-            <label className="label font-medium">Thumbnail URL</label>
+            <label className="label font-medium">Poster URL</label>
             <input
               type="url"
-              name="thumbnail"
+              name="posterUrl"
               required
               className="input w-full rounded-full focus:border-0 focus:outline-gray-200"
               placeholder="https://example.com/image.jpg"
             />
           </div>
-
+                  {/* Language Field */}
+          <div>
+            <label className="label font-medium">Language</label>
+            <input
+              type="text"
+              name="language"
+              required
+              className="input w-full rounded-full focus:border-0 focus:outline-gray-200"
+              placeholder="Enter the Language"
+            />
+          </div>
+                  {/* Country Field */}
+          <div>
+            <label className="label font-medium">Country</label>
+            <input
+              type="text"
+              name="country"
+              required
+              className="input w-full rounded-full focus:border-0 focus:outline-gray-200"
+              placeholder="Enter the Country"
+            />
+          </div>
+                  {/* Added By */}
+          <div>
+            <label className="label font-medium">Country</label>
+            <input
+              type="email"
+              name="addedBy"
+              required
+              className="input w-full rounded-full focus:border-0 focus:outline-gray-200"
+              placeholder="Enter Your Email"
+            />
+          </div>
+          
           {/* Submit Button */}
+          <div className="grid place-items-center">
           <button
             type="submit"
-            className="btn w-full text-white mt-6 rounded-full bg-linear-to-r from-pink-500 to-red-600 hover:from-pink-600 hover:to-red-700"
+            className="w-full btn-grad"
           >
-            Add Model
+            Add Movie
           </button>
+          </div>
         </form>
       </div>
     </div>

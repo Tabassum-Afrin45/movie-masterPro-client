@@ -24,9 +24,34 @@
 }
 
 .navbar .active {
-  color: crimson;
+  color: #19664f;
   font-weight: bold;
   border: 1px solid #CAC8C8FF;
   border-radius: 20px;
-  background: rgb(243, 226, 226);
+  background: rgb(182, 210, 203);
+}
+
+.btn-grad {
+  background-image: linear-gradient(to right, #134E5E 0%, #71B280 51%, #134E5E 100%);
+}
+
+.btn-grad {
+  margin: 10px;
+  padding: 15px 45px;
+  text-align: center;
+  font-weight: bold;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+  box-shadow: 0 0 20px #eee;
+  border-radius: 10px;
+  display: block;
+  outline: none;
+  border: none;
+}
+
+.btn-grad:hover {
+  background-position: right center;
+  color: #fff;
+  text-decoration: none;
 }
