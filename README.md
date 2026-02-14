@@ -1,7 +1,7 @@
 Movie Master Pro
 
 Live Site URL:
-https://movie-master-pro.vercel.app
+https://flourishing-clafoutis-be1c2c.netlify.app/
 
 Movie Master Pro is a movie management web application where users can explore, add, update, and manage their personal movie collections securely.
 
