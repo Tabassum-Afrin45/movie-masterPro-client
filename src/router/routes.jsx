@@ -20,7 +20,18 @@ export const router = createBrowserRouter([
       {
         path: "/",
         element: <Home />,
-        loader:()=>fetch('http://localhost:3000/latest-movies')
+        loader:async()=>{
+          const [latestRes, topRatedRes, featuredRes, statsRes]=await Promise.all([
+          fetch('http://localhost:3000/latest-movies'),
+          fetch('http://localhost:3000/top-rated'),
+          ])
+             return {
+      latest: await latestRes.json(),
+      topRated: await topRatedRes.json(),
+      // featured: await featuredRes.json(),
+      // stats: await statsRes.json(),
+    }
+        }
       },
       {
         path: "/all-movies",
