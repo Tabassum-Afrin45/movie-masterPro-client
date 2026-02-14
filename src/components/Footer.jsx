@@ -24,8 +24,8 @@ const Footer = () => {
             <span className="text-xl font-bold text-white">Our Pages</span>
           </div>
           <ul className="space-y-2 mt-2">
-            <li><Link to="/" className="text-white">All Movies</Link></li>
-            <li><Link to="/all-movies"  className="text-white">Profile</Link></li>
+            <li><Link to="/" className="text-white">Home</Link></li>
+            <li><Link to="/all-movies"  className="text-white">All Movies</Link></li>
             <li><Link to="/auth/login" className="text-white">Login</Link></li>
           </ul>
         </div>

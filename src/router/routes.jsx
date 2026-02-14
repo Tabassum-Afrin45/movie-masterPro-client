@@ -6,7 +6,6 @@ import Register from "../Pages/Auth/Registration";
 import Home from "../Pages/Home/Home";
 import MovieDetails from "../Pages/MovieDetails/MovieDetails";
 import MyCollections from "../Pages/MyCollection/MyCollection";
-import Profile from "../Pages/Profile/Profile";
 import UpdateMovie from "../Pages/UpdateMovie/UpdateMovie";
 import PrivateRoute from "./PrivateRoute";
 import MainLayout from "../layout/MainLayout";
@@ -21,15 +20,15 @@ export const router = createBrowserRouter([
         path: "/",
         element: <Home />,
         loader:async()=>{
-          const [latestRes, topRatedRes, featuredRes, statsRes]=await Promise.all([
+          const [latestRes, topRatedRes,statsRes]=await Promise.all([
           fetch('http://localhost:3000/latest-movies'),
           fetch('http://localhost:3000/top-rated'),
+           fetch('http://localhost:3000/statistics')
           ])
              return {
       latest: await latestRes.json(),
       topRated: await topRatedRes.json(),
-      // featured: await featuredRes.json(),
-      // stats: await statsRes.json(),
+      stats: await statsRes.json()
     }
         }
       },
@@ -38,14 +37,7 @@ export const router = createBrowserRouter([
         element: <AllMovies />,
         loader: () => fetch('http://localhost:3000/movies')
       },
-      {
-        path: "/profile",
-        element: (
-          <PrivateRoute>
-            <Profile />
-          </PrivateRoute>
-        ),
-      },
+      
       {
         path: "/add-movie",
         element: (

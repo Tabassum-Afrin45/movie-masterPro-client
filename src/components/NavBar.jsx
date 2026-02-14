@@ -60,6 +60,16 @@ const NavBar = () => {
                 <RiMovieLine /> All Movies
               </NavLink>
             </li>
+                <li>
+            <NavLink to={"/add-movie"}>
+             <MdAddToPhotos />Add Movie
+            </NavLink>
+          </li>
+          <li>
+                <NavLink to={"/my-collections"}>
+                 <LuSaveAll /> My Collections
+                </NavLink>
+              </li>
           </ul>
         </div>
         <Link to={"/"} className="flex items-center gap-1 text-base md:text-2xl font-bold text-white ml-4">
@@ -122,11 +132,6 @@ const NavBar = () => {
                 <li className="text-sm font-bold">{user.displayName}</li>
                 <li className="text-xs">{user.email}</li>
               </div>
-              <li className="mt-3">
-                <Link to={"/profile"}>
-                  <FaUser /> Profile
-                </Link>
-              </li>
               
               <input
            onChange={(e)=> handleTheme(e.target.checked)}
