@@ -98,13 +98,14 @@ const MovieDetails = () => {
 
             <div className="flex items-center justify-between mt-6">
               {user?.email === movie.addedBy && (
+                 <>
                 <Link
                   to={`/update-movie/${movie._id}`}
                   className="btn-grad"
                 >
                   Edit
                 </Link>
-              )}
+            
 
               <button
                 onClick={handleDelete}
@@ -112,6 +113,8 @@ const MovieDetails = () => {
               >
                 Delete
               </button>
+              </>
+                )}
             </div>
           </div>
         </div>

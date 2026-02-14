@@ -1,7 +1,6 @@
 import { use } from "react";
 import toast from "react-hot-toast";
 import { useLoaderData } from "react-router";
-import { AuthContext } from "../../context/AuthContext";
 
 const UpdateMovie = () => {
   const data = useLoaderData();
