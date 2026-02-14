@@ -31,7 +31,21 @@ const Home = () => {
           ))}
         </div>
       </div>
+      {/* Genre Section (Static) */}
+      <div className="mt-16 text-center">
+        <h2 className="text-3xl font-bold">Genres</h2>
+        <div className="flex justify-center gap-6 mt-6">
+          <span className="badge badge-secondary bg-linear-to-r from-[#134E5E] to-green-500 border-none">Action</span>
+          <span className="badge badge-secondary bg-linear-to-r from-[#134E5E] to-green-500 border-none">Drama</span>
+          <span className="badge badge-secondary bg-linear-to-r from-[#134E5E] to-green-500 border-none">Comedy</span>
+          <span className="badge badge-secondary bg-linear-to-r from-[#134E5E] to-green-500 border-none">Thriller</span>
 
+          <span className="badge badge-secondary bg-linear-to-r from-[#134E5E] to-green-500 border-none">Sci-Fi</span>
+ 
+          <span className="badge badge-secondary bg-linear-to-r from-[#134E5E] to-green-500 border-none">Animation</span>
+          <span className="badge badge-secondary bg-linear-to-r from-[#134E5E] to-green-500 border-none">Others</span>
+        </div>
+      </div>
     </div>
   );
 };
