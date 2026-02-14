@@ -68,6 +68,7 @@ export const router = createBrowserRouter([
             <UpdateMovie />
           </PrivateRoute>
         ),
+        loader:({params})=>fetch(`http://localhost:3000/movies/${params.id}`)
    },
       {
         path: "/auth/login",

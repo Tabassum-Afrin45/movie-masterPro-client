@@ -185,12 +185,12 @@ const AddMovie = () => {
           </div>
                   {/* Added By */}
           <div>
-            <label id="FrmEmail" className="label font-medium">Added By</label>
+            <label className="label font-medium">Added By</label>
             <input
               type="email"
-              id="FrmEmail"
               name="addedBy"
-              autocomplete="email"
+              value={user?.email || ""}
+               readOnly
               required
               className="input w-full rounded-full focus:border-0 focus:outline-gray-200"
               placeholder="Enter Your Email"

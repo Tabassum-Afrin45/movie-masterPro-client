@@ -1,6 +1,5 @@
 import toast from "react-hot-toast";
 import { useLoaderData } from "react-router";
-import Swal from "sweetalert2";
 
 const UpdateMovie = () => {
   const data = useLoaderData();

@@ -18,22 +18,9 @@ export const MovieCard = ({movie}) => {
         <div className="badge text-sm badge-sm badge-secondary bg-green-800 border-green-800 rounded-full">{genre}</div>
         <div className="badge text-sm badge-sm  badge-secondary  bg-white border-yellow-400 text-yellow-600 rounded-full">{rating} ⭐</div>
         </div>
-        {/* <div className="text-xs text-secondary">{created_by}</div>
-        <p className="line-clamp-1">
-            {description}
-        </p> */}
 
-        {/* <p className="text-sm text-base-content/70">by {author}</p> */}
         <div className="card-actions justify-between items-center mt-2">
           <div className="flex gap-4 text-sm text-base-content/60">
-            {/* <span className="flex items-center gap-1">
-              <Eye className="w-4 h-4" />
-              {views}
-            </span> */}
-            {/* <span className="flex items-center gap-1">
-              <Heart className="w-4 h-4" />
-              {likes}
-            </span> */}
           </div>
           <Link to={`/movie-details/${_id}`} className="btn-grad w-full">View Details</Link>
         </div>
