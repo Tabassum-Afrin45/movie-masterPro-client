@@ -1,7 +1,7 @@
 import { Link } from "react-router";
 
 export const MovieCard = ({movie}) => {
-   const {_id, title, genre, posterUrl } =movie
+   const {_id, title, genre, posterUrl,rating } =movie
 
   return (
     <div className="card bg-base-100 shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
@@ -13,15 +13,18 @@ export const MovieCard = ({movie}) => {
         />
       </figure>
       <div className="card-body">
-        <h2 className="card-title">{title}</h2>
-        <div className="badge text-xs badge-xs badge-secondary rounded-full">{genre}</div>
+        <h2 className="card-title mb-2">{title}</h2>
+        <div className="flex items-center justify-between ml-1 mr-3">
+        <div className="badge text-sm badge-sm badge-secondary bg-green-800 border-green-800 rounded-full">{genre}</div>
+        <div className="badge text-sm badge-sm  badge-secondary  bg-white border-yellow-400 text-yellow-600 rounded-full">{rating} ⭐</div>
+        </div>
         {/* <div className="text-xs text-secondary">{created_by}</div>
         <p className="line-clamp-1">
             {description}
         </p> */}
 
         {/* <p className="text-sm text-base-content/70">by {author}</p> */}
-        <div className="card-actions justify-between items-center mt-4">
+        <div className="card-actions justify-between items-center mt-2">
           <div className="flex gap-4 text-sm text-base-content/60">
             {/* <span className="flex items-center gap-1">
               <Eye className="w-4 h-4" />
