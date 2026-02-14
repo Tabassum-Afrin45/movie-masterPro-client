@@ -4,8 +4,6 @@ import { useLoaderData } from "react-router";
 import { AuthContext } from "../../context/AuthContext";
 
 const UpdateMovie = () => {
-  const { user } = use(AuthContext)
-
   const data = useLoaderData();
   const movie = data.result;
 
@@ -68,7 +66,7 @@ const UpdateMovie = () => {
           <div>
             <label className="label font-medium">Genre</label>
             <select
-              defaultValue={"movie.genre"}
+              defaultValue={movie.genre}
               name="genre"
               required
               className="select w-full rounded-full focus:border-0 focus:outline-gray-200"

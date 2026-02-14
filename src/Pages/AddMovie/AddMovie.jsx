@@ -35,6 +35,7 @@ const AddMovie = () => {
     .then(data=> {
       toast.success("Movie Successfully Added!")
       console.log(data)
+      e.target.reset(); 
     })
     .catch(err => {
       console.log(err)
