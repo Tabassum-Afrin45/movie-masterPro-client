@@ -13,16 +13,6 @@
 }
 
 
-
-.glass-card {
-  background: rgba(255, 255, 255, 0.14);
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
-  border-radius: 20px;
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  /* overflow: hidden; */
-}
-
 .navbar .active {
   color: #19664f;
   font-weight: bold;
@@ -43,7 +33,7 @@
   transition: 0.5s;
   background-size: 200% auto;
   color: white;
-  box-shadow: 0 0 20px #eee;
+  box-shadow: 0 0 8px #eee;
   border-radius: 10px;
   display: block;
   outline: none;

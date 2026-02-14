@@ -8,7 +8,7 @@ const MyCollections = () => {
 
     useEffect(()=> {
 
-        fetch(`http://localhost:3000/my-collections?email=${user.email}`)
+        fetch(`https://movie-master-pro-server-nu.vercel.app/my-collections?email=${user.email}`)
         .then(res=> res.json())
         .then(data=> {
             

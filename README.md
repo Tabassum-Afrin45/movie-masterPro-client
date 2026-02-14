@@ -1,16 +1,18 @@
-# React + Vite
+Movie Master Pro
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Live Site URL:
+https://movie-master-pro.vercel.app
 
-Currently, two official plugins are available:
+Movie Master Pro is a movie management web application where users can explore, add, update, and manage their personal movie collections securely.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Features
 
-## React Compiler
+1. Authentication System - Secure Email/Password and Google login using Firebase Authentication.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+2. Add & Manage Movies - Authenticated users can add, update, and delete movies.
 
-## Expanding the ESLint configuration
+3. My Collections Page - Users can view and manage only the movies they have added.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+4. Protected Routes - Private pages are accessible only after login.
+
+5. Dynamic Movie Listing - Movies are displayed dynamically from MongoDB database.

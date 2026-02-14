@@ -21,9 +21,9 @@ export const router = createBrowserRouter([
         element: <Home />,
         loader:async()=>{
           const [latestRes, topRatedRes,statsRes]=await Promise.all([
-          fetch('http://localhost:3000/latest-movies'),
-          fetch('http://localhost:3000/top-rated'),
-           fetch('http://localhost:3000/statistics')
+          fetch('https://movie-master-pro-server-nu.vercel.app/latest-movies'),
+          fetch('https://movie-master-pro-server-nu.vercel.app/top-rated'),
+           fetch('https://movie-master-pro-server-nu.vercel.app/statistics')
           ])
              return {
       latest: await latestRes.json(),
@@ -35,7 +35,7 @@ export const router = createBrowserRouter([
       {
         path: "/all-movies",
         element: <AllMovies />,
-        loader: () => fetch('http://localhost:3000/movies')
+        loader: () => fetch('https://movie-master-pro-server-nu.vercel.app/movies')
       },
       
       {
@@ -53,7 +53,7 @@ export const router = createBrowserRouter([
             <MovieDetails />
           </PrivateRoute>
         ),
-        loader:({params})=>fetch(`http://localhost:3000/movies/${params.id}`)
+        loader:({params})=>fetch(`https://movie-master-pro-server-nu.vercel.app/movies/${params.id}`)
       },
 
        {
@@ -72,7 +72,7 @@ export const router = createBrowserRouter([
             <UpdateMovie />
           </PrivateRoute>
         ),
-        loader:({params})=>fetch(`http://localhost:3000/movies/${params.id}`)
+        loader:({params})=>fetch(`https://movie-master-pro-server-nu.vercel.app/movies/${params.id}`)
    },
       {
         path: "/auth/login",

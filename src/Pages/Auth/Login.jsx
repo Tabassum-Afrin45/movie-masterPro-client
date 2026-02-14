@@ -2,6 +2,7 @@ import { use } from "react";
 import { Link, useLocation, useNavigate } from "react-router";
 import { AuthContext } from "../../context/AuthContext";
 import { FaGoogle } from "react-icons/fa";
+import toast from "react-hot-toast";
 
 const Login = () => {
   const { signInUser, signInWithGoogle } = use(AuthContext);
@@ -20,10 +21,13 @@ const Login = () => {
       .then((result) => {
         console.log(result.user);
         event.target.reset();
-        navigate(location.state || "/");
+        toast.success("Login successful!", { id: "login" });
+       
+        navigate(location?.state?.from?.pathname || "/");
       })
       .catch((error) => {
         console.log(error);
+        toast.error("Invalid email or password!",{id:"login"})
       });
   };
 
@@ -31,7 +35,8 @@ const Login = () => {
     signInWithGoogle()
       .then((result) => {
         console.log(result.user);
-        navigate(location?.state || "/");
+    
+        navigate(location?.state?.from?.pathname || "/");
       })
       .catch((error) => {
         console.log(error);
@@ -71,7 +76,7 @@ const Login = () => {
 
         <button
           onClick={handleGoogleSignIn}
-          className="btn bg-white rounded-full text-black border-[#e5e5e5]"
+          className="btn w-11/12 mx-auto bg-white rounded-xl text-black border-[#e5e5e5]"
         >
           <FaGoogle />
           Login with Google

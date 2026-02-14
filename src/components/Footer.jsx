@@ -15,7 +15,7 @@ const Footer = () => {
   return (
     <footer className="bg-linear-to-l from-[#134E5E] to-[#19664f] py-8 px-4  rounded-xl mt-20">
       <div className="container grid grid-cols-1 gap-6 md:grid-cols-3  place-items-center">
-      <div className="flex items-center justify-center gap-2 text-4xl text-white space-y-2 mt-2">
+      <div className="flex items-center justify-center gap-2 text-2xl md:text-3xl lg:text-4xl text-white space-y-2 mt-2">
         <RiMovie2AiLine />
         <span className="font-bold text-white">Movie Master Pro</span>
       </div>
@@ -31,7 +31,7 @@ const Footer = () => {
         </div>
 
         <div>
-          <h3 className="text-lg font-bold mb-4 text-white">Connect With Us</h3>
+          <h3 className="text-xl font-bold mb-4 text-white">Connect With Us</h3>
           <div className="flex space-x-4 mb-4 text-white">
             <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
               <Facebook size={24} />

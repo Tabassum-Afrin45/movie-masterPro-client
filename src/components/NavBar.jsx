@@ -59,6 +59,8 @@ const NavBar = () => {
                 <RiMovieLine /> All Movies
               </NavLink>
             </li>
+            {user&&(
+            <>
                 <li>
             <NavLink to={"/add-movie"}>
              <MdAddToPhotos />Add Movie
@@ -69,14 +71,16 @@ const NavBar = () => {
                  <LuSaveAll /> My Collections
                 </NavLink>
               </li>
+              </>
+              )}
           </ul>
         </div>
-        <Link to={"/"} className="flex items-center gap-1 text-base md:text-2xl font-bold text-white ml-4">
+        <Link to={"/"} className="flex items-center gap-1 text-base md:text-xl lg:text-3xl font-bold text-white ml-4">
           <RiMovie2AiLine /> Movie Master Pro
         </Link>
       </div>
       <div className="navbar-center hidden md:flex text-white ">
-        <ul className="menu menu-horizontal px-4 gap-10 text-[15px]">
+        <ul className="menu menu-horizontal px-4 gap-10 md:text-[12px] lg:text-[15px]">
           <li>
             <NavLink to={"/"}>
               <GoHomeFill />
@@ -89,6 +93,8 @@ const NavBar = () => {
                All Movies
             </NavLink>
           </li>
+            {user&&(
+            <>
           <li>
             <NavLink to={"/add-movie"}>
              <MdAddToPhotos />Add Movie
@@ -99,12 +105,8 @@ const NavBar = () => {
                  <LuSaveAll /> My Collections
                 </NavLink>
               </li>
-{/* 
-          <li>
-            <NavLink to={"/profile"}>
-              <FaUser /> Profile
-            </NavLink>
-          </li> */}
+               </>
+              )}
         </ul>
       </div>
       <div className="navbar-end gap-3">
@@ -155,12 +157,20 @@ const NavBar = () => {
             </ul>
           </div>
         ) : (
+          <>
+           <Link
+            to={"/auth/register"}
+            className="btn-grad rounded-full border-gray-300 font-medium text-md"
+          >
+            Register
+          </Link>
           <Link
             to={"/auth/login"}
             className="btn-grad rounded-full border-gray-300 font-medium text-md"
           >
             Login
           </Link>
+          </>
         )}
       </div>
     </div>

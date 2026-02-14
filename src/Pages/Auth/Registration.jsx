@@ -14,9 +14,14 @@ const Register = () => {
     const photoURL = event.target.photoURL.value;
     const email = event.target.email.value;
     const password = event.target.password.value;
-    if (!/[A-Z]/.test(password)) return setError("Need uppercase letter");
-    if (!/[a-z]/.test(password)) return setError("Need lowercase letter");
-    if (password.length < 6) return setError("Min 6 characters");
+
+    const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{6,}$/;
+
+  if (!passwordRegex.test(password)) {
+    return toast.error(
+      "Password must have atleast 8 charecters. One Upercase,One Lowercase and 6 digits"
+    );
+  }
 
     toast.loading("Creating user...", { id: "create-user" });
     createUser(email, password)
@@ -24,6 +29,7 @@ const Register = () => {
         console.log(result.user);
         updateUserProfile(displayName, photoURL);
         toast.success("User created successfully!", { id: "create-user" });
+            navigate("/");
       })
       .catch((error) => {
         console.log(error);
@@ -86,7 +92,7 @@ const Register = () => {
             <div>
               <a className="link link-hover">Forgot password?</a>
             </div>
-            <button className="btn text-white mt-4 rounded-full bg-linear-to-r from-pink-500 to-red-600">
+            <button className="btn-grad">
               Register
             </button>
           </fieldset>
@@ -94,10 +100,10 @@ const Register = () => {
 
         <button
           onClick={handleGoogleSignIn}
-          className="btn bg-white rounded-full text-black border-[#e5e5e5]"
+          className="btn bg-white rounded-xl w-11/12 mx-auto text-black border-[#e5e5e5]"
         >
           <FaGoogle />
-          Login with Google
+          SignUp with Google
         </button>
         <p className="text-center">
           Already have an account? Please{" "}

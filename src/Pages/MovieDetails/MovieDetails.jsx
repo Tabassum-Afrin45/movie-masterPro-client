@@ -24,7 +24,7 @@ const MovieDetails = () => {
     }).then((result) => {
       if (result.isConfirmed) {
         
-        fetch(`http://localhost:3000/movies/${movie._id}`, {
+        fetch(`https://movie-master-pro-server-nu.vercel.app/movies/${movie._id}`, {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",
