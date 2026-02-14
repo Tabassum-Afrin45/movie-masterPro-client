@@ -116,7 +116,7 @@ const AddMovie = () => {
               placeholder="Enter the Cast Name"
             />
           </div>
-                {/* Release Year Field */}
+                {/* Rating Field */}
           <div>
             <label className="label font-medium">Rating</label>
             <input
