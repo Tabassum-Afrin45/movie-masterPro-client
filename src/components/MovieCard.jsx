@@ -32,7 +32,7 @@ export const MovieCard = ({movie}) => {
               {likes}
             </span> */}
           </div>
-          <Link to={`/model-details/${_id}`} className="btn rounded-full bg-linear-to-r from-pink-500 to-red-600 hover:from-red-600 hover:to-pink-500 text-white w-full btn-sm">View Details</Link>
+          <Link to={`/movie-details/${_id}`} className="btn-grad w-full">View Details</Link>
         </div>
       </div>
     </div>

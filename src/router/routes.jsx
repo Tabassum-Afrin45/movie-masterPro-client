@@ -49,6 +49,7 @@ export const router = createBrowserRouter([
             <MovieDetails />
           </PrivateRoute>
         ),
+        loader:({params})=>fetch(`http://localhost:3000/movies/${params.id}`)
       },
 
        {
