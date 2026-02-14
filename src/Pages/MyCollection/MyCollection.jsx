@@ -8,11 +8,7 @@ const MyCollections = () => {
 
     useEffect(()=> {
 
-        fetch(`http://localhost:3000/my-collections?email=${user.email}`, {
-            headers: {
-                authorization: `Bearer ${user.accessToken}`
-            }
-        })
+        fetch(`http://localhost:3000/my-collections?email=${user.email}`)
         .then(res=> res.json())
         .then(data=> {
             
@@ -24,12 +20,12 @@ const MyCollections = () => {
 
 
     if(loading) {
-        return <div> Please wait ... Loading...</div>
+        return <div>Loading...</div>
     }
 
     return (
         <div>
-              <div className="grid grid-cols-3 lg:grid-cols-4 gap-3">
+              <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-3">
                      {movies.map(movie => <MovieCard key={movie._id} movie={movie}/>)}
                   </div>
             

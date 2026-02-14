@@ -1,8 +1,7 @@
 import { Link, NavLink } from "react-router";
-import { IoLogoModelS } from "react-icons/io";
 import { GoHomeFill } from "react-icons/go";
-import { IoLogIn, IoLogOut } from "react-icons/io5";
-import { FaGear, FaUser } from "react-icons/fa6";
+import { IoLogOut } from "react-icons/io5";
+import { FaGear} from "react-icons/fa6";
 import { use, useEffect, useState } from "react";
 import { AuthContext } from "../context/AuthContext";
 import { RiMovie2AiLine, RiMovieLine } from "react-icons/ri";
