@@ -1,10 +1,11 @@
-import { use, useEffect, useState } from "react";
+
 import { Link, useLoaderData, useNavigate, useParams } from "react-router";
-import Swal from "sweetalert2";
+import { useContext } from "react";
 import { AuthContext } from "../../context/AuthContext";
-import toast from "react-hot-toast";
+
 
 const MovieDetails = () => {
+  const { user } = useContext(AuthContext);
   const data=useLoaderData()
   const movie=data.result
   console.log(movie)
@@ -57,12 +58,14 @@ const MovieDetails = () => {
             </p>
     
             <div className="flex gap-3 mt-6">
-              <Link
-                to={`/update-movie/${movie._id}`}
-                className="btn-grad"
+              {user?.email === movie.addedBy && (
+    <Link
+      to={`/update-movie/${movie._id}`}
+      className="btn-grad"
               >
                 Update Movie
               </Link>
+              )}
              
               {/* <button
                 onClick={handleDelete}

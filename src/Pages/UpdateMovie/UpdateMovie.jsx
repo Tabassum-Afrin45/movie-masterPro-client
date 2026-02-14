@@ -24,7 +24,7 @@ const UpdateMovie = () => {
       posterUrl: e.target.posterUrl.value,
       language: e.target.language.value,
       country: e.target.country.value,
-      addedBy: user.email
+      
     }
 
     fetch(`http://localhost:3000/movies/${movie._id}`, {
@@ -42,7 +42,7 @@ const UpdateMovie = () => {
       .catch((err) => {
         console.log(err);
       });
-      
+
   };
 
 
