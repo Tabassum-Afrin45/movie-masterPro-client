@@ -1,7 +1,11 @@
+import { use } from "react";
 import toast from "react-hot-toast";
 import { useLoaderData } from "react-router";
+import { AuthContext } from "../../context/AuthContext";
 
 const UpdateMovie = () => {
+  const { user } = use(AuthContext)
+
   const data = useLoaderData();
   const movie = data.result;
 
@@ -9,12 +13,17 @@ const UpdateMovie = () => {
     e.preventDefault();
 
    const formData = {
-      name: e.target.title.value,
-      category: e.target.genre.value,
-      description: e.target.plotSummary.value,
-      posterUrl: e.target.posterUrl.value,
+    title: e.target.title.value,
+      genre: e.target.genre.value,
       releaseYear:e.target.releaseYear.value,
+      director: e.target.director.value,
+      cast: e.target.cast.value,
       rating: e.target.rating.value,
+      duration: e.target.duration.value,
+      plotSummary: e.target.plotSummary.value,
+      posterUrl: e.target.posterUrl.value,
+      language: e.target.language.value,
+      country: e.target.country.value,
       addedBy: user.email
     }
 
@@ -37,82 +46,177 @@ const UpdateMovie = () => {
 
 
   return (
-    <div className="card bg-base-100 w-full max-w-md mx-auto shadow-2xl rounded-2xl">
+    <div className="card border border-gray-200 bg-base-100 w-full max-w-md mx-auto my-12 shadow-2xl rounded-2xl">
       <div className="card-body p-6 relative">
-        <h2 className="text-2xl font-bold text-center mb-6">Update Movie</h2>
+        <h2 className="text-3xl font-bold text-center my-auto py-2 text-green-800">Update Your Movie</h2>
         <form onSubmit={handleSubmit} className="space-y-4">
-          {/* Name Field */}
+          {/* Title Field */}
           <div>
-            <label className="label font-medium">Name</label>
+            <label className="label font-medium">Title</label>
             <input
               type="text"
               defaultValue={movie.title}
-              name="name"
+              name="title"
               required
               className="input w-full rounded-full focus:border-0 focus:outline-gray-200"
-              placeholder="Enter name"
+              placeholder="Enter the Title"
             />
           </div>
 
-          {/* Category Dropdown */}
+          {/* Genre Dropdown */}
           <div>
-            <label className="label font-medium">Category</label>
+            <label className="label font-medium">Genre</label>
             <select
-              defaultValue={movie.genre}
-              name="category"
+              defaultValue={"movie.genre"}
+              name="genre"
               required
               className="select w-full rounded-full focus:border-0 focus:outline-gray-200"
             >
               <option value="" disabled>
-                Select category
+                Select The Genre
               </option>
-              <option value="Vehicles">Vehicles</option>
-              <option value="Plants">Plants</option>
-              <option value="Foods">Foods</option>
-              <option value="Home & Living">Home & Living</option>
-              <option value="Characters">Characters</option>
-              <option value="Space">Space</option>
-              <option value="Animals">Animals</option>
+              <option value="Drama">Drama</option>
+              <option value="Comedy">Comedy</option>
+              <option value="Sci-Fi">Sci-Fi</option>
+              <option value="Thriller">Thriller</option>
+              <option value="Romantic">Romantic</option>
+              <option value="Animation">Animation</option>
+              <option value="Action">Action</option>
               <option value="Other">Other</option>
             </select>
           </div>
-
-          {/* Description Textarea */}
+                {/* Release Year Field */}
           <div>
-            <label className="label font-medium">Description</label>
+            <label className="label font-medium">Release Year</label>
+            <input
+              type="text"
+              defaultValue={movie.releaseYear}
+              name="releaseYear"
+              required
+              className="input w-full rounded-full focus:border-0 focus:outline-gray-200"
+              placeholder="Enter the Release Year"
+            />
+          </div>
+                {/* Director Field */}
+          <div>
+            <label className="label font-medium">Director</label>
+            <input
+              type="text"
+              defaultValue={movie.director}
+              name="director"
+              required
+              className="input w-full rounded-full focus:border-0 focus:outline-gray-200"
+              placeholder="Enter the Director Name"
+            />
+          </div>
+                {/* Cast Field */}
+          <div>
+            <label className="label font-medium">Cast</label>
+            <input
+              type="text"
+              defaultValue={movie.cast}
+              name="cast"
+              required
+              className="input w-full rounded-full focus:border-0 focus:outline-gray-200"
+              placeholder="Enter the Cast Name"
+            />
+          </div>
+                {/* Rating Field */}
+          <div>
+            <label className="label font-medium">Rating</label>
+            <input
+              type="text"
+              defaultValue={movie.rating}
+              name="rating"
+              required
+              className="input w-full rounded-full focus:border-0 focus:outline-gray-200"
+              placeholder="Enter Ratings"
+            />
+          </div>
+                {/* Duration Field */}
+          <div>
+            <label className="label font-medium">Duration</label>
+            <input
+              type="text"
+              defaultValue={movie.duration}
+              name="duration"
+              required
+              className="input w-full rounded-full focus:border-0 focus:outline-gray-200"
+              placeholder="Enter Duration"
+            />
+          </div>
+          {/* Plot Summary Textarea */}
+          <div>
+            <label className="label font-medium">Plot Summary</label>
             <textarea
-              defaultValue={movie.
-plotSummary}
-              name="description"
+              name="plotSummary"
+              defaultValue={movie.plotSummary}
               required
               rows="3"
-              className="textarea w-full rounded-2xl focus:border-0 focus:outline-gray-200 h-62.5"
+             className="textarea w-full rounded-2xl focus:border-0 focus:outline-gray-200 h-62.5"
               placeholder="Enter description"
             ></textarea>
           </div>
 
-          {/* Thumbnail URL */}
+          {/* Poster URL */}
           <div>
-            <label className="label font-medium">Thumbnail URL</label>
+            <label className="label font-medium">Poster URL</label>
             <input
               type="url"
-              name="thumbnail"
-              defaultValue={movie.
-posterUrl}
+              defaultValue={movie.posterUrl}
+              name="posterUrl"
               required
               className="input w-full rounded-full focus:border-0 focus:outline-gray-200"
               placeholder="https://example.com/image.jpg"
             />
           </div>
-
+                  {/* Language Field */}
+          <div>
+            <label className="label font-medium">Language</label>
+            <input
+              type="text"
+              defaultValue={movie.language}
+              name="language"
+              required
+              className="input w-full rounded-full focus:border-0 focus:outline-gray-200"
+              placeholder="Enter the Language"
+            />
+          </div>
+                  {/* Country Field */}
+          <div>
+            <label className="label font-medium">Country</label>
+            <input
+              type="text"
+              defaultValue={movie.country}
+              name="country"
+              required
+              className="input w-full rounded-full focus:border-0 focus:outline-gray-200"
+              placeholder="Enter the Country"
+            />
+          </div>
+                  {/* Added By */}
+          <div>
+            <label className="label font-medium">Added By</label>
+            <input
+              type="email"
+              name="addedBy"
+              defaultValue={movie.addedBy}
+               readOnly
+              required
+              className="input w-full rounded-full focus:border-0 focus:outline-gray-200"
+              placeholder="Enter Your Email"
+            />
+          </div>
+          
           {/* Submit Button */}
+          <div className="grid place-items-center">
           <button
-       
             type="submit"
-            className="btn w-full text-white mt-6 rounded-full bg-linear-to-r from-pink-500 to-red-600 hover:from-pink-600 hover:to-red-700"
+            className="w-full btn-grad"
           >
             Update Movie
           </button>
+          </div>
         </form>
       </div>
     </div>
